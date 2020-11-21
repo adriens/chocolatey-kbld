@@ -1,7 +1,7 @@
 ![Twitter Follow](https://img.shields.io/twitter/follow/rastadidi?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/carvel_dev?label=Follow%20Carvel.dev&style=social)
 
-![Project banner](choco-kapp-banner.png)
+![Project banner](choco-kbld-banner.png)
 
 
 # Usage
