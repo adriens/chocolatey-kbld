@@ -11,4 +11,4 @@ The only included binary is :
 
 e2b6867f0da54a1323d059bdc75693ea2949c94ebbad71493237de20c80a2968  ./kbld-windows-amd64.exe
 
-but renamed from <kbld-windows-amd64.exe> to <kbld>.
+but renamed from <kbld-windows-amd64.exe> to <kbld.exe>.
