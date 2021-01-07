@@ -1,3 +1,7 @@
+[![Chocolatey](https://img.shields.io/chocolatey/v/kbld.svg)](https://chocolatey.org/packages/kbld)
+[![Chocolatey](https://img.shields.io/chocolatey/dt/kbld.svg)](https://chocolatey.org/packages/kbld)
+
+
 ![Twitter Follow](https://img.shields.io/twitter/follow/rastadidi?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/carvel_dev?label=Follow%20Carvel.dev&style=social)
 
