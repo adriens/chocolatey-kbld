@@ -20,4 +20,3 @@ $package = Split-Path $tools
 $kbld_exe = Join-Path $package '/tools/kbld.exe'
 
 Install-BinFile -Name 'kbld' -Path $kbld_exe
-Update-SessionEnvironment
