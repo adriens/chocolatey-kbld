@@ -20,8 +20,6 @@ To install `kbld` and get an optimal experience on windows, just:
 
 ## Build locally
 
-[Chocolatey package](https://chocolatey.org/packages/kbld/) to install [Carvel/kbld](https://github.com/vmware-tanzu/carvel-kbld) (currenlty [under moderation process](https://github.com/adriens/chocolatey-kbld/issues/1))
-
 ```
 git clone https://github.com/adriens/chocolatey-kbld.git
 cd chocolatey-kbld
@@ -39,5 +37,5 @@ choco install -fdv kbld.nuspec
 ## Deploy to central
 
 ```
-choco push kbld.0.27.0.nupkg --source https://push.chocolatey.org/ -apikey *******
+choco push kbld.0.28.0.nupkg --source https://push.chocolatey.org/ -apikey *******
 ```

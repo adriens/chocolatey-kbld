@@ -3,7 +3,7 @@
   <metadata>
     <id>kbld</id>
     <title>Carvel kbld</title>
-    <version>0.27.0</version>
+    <version>0.28.0</version>
     <authors>Carvel</authors>
     <owners>Adrien SALES</owners>
     <summary>kbld seamlessly incorporates image building and image pushing into your
@@ -26,8 +26,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://avatars3.githubusercontent.com/u/48573588?s=200&amp;v=4</iconUrl>
     <packageSourceUrl>https://github.com/adriens/chocolatey-kbld</packageSourceUrl>
-    <releaseNotes>https://github.com/vmware-tanzu/carvel-kbld/releases/tag/v0.27.0</releaseNotes>
-    <docsUrl>https://github.com/vmware-tanzu/carvel-kbld/tree/develop/docs</docsUrl>
+    <releaseNotes>https://github.com/vmware-tanzu/carvel-kbld/releases/tag/v0.28.0</releaseNotes>
+    <docsUrl>https://carvel.dev/kbld/docs/latest/</docsUrl>
     <bugTrackerUrl>https://github.com/vmware-tanzu/carvel-kbld/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/vmware-tanzu/carvel-kbld/</projectSourceUrl>
     <mailingListUrl>https://github.com/vmware-tanzu/carvel-kbld/issues</mailingListUrl>
