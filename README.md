@@ -41,5 +41,5 @@ choco install -fdv kbld.nuspec
 ## Deploy to central
 
 ```
-choco push kbld.0.28.0.nupkg --source https://push.chocolatey.org/ -apikey *******
+choco push kbld.0.29.0.nupkg --source https://push.chocolatey.org/ -apikey *******
 ```

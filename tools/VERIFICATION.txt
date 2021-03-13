@@ -5,10 +5,10 @@ in verifying that this package's contents are trustworthy.
 
 Binary file <kbld> comes from the official release page :
 
-<https://github.com/vmware-tanzu/carvel-kbld/releases/tag/v0.28.0>
+<https://github.com/vmware-tanzu/carvel-kbld/releases/tag/v0.29.0>
 
 The only included binary is :
 
-654c39530fd38fbe8415ab7f11da2fd7a545b0af8db7580b0f7e75439a163fc5  ./kbld-windows-amd64.exe
+45d46cf008e7c4f47ffecfbc54497d8d2f18c69fe03825b39c12b490da520765  ./kbld-windows-amd64.exe
 
 but renamed from <kbld-windows-amd64.exe> to <kbld.exe>.
