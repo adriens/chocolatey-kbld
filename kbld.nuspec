@@ -24,7 +24,7 @@
     <tags>kubernetes cli containers devops go docker k8s carvel</tags>
     <licenseUrl>https://github.com/vmware-tanzu/carvel-kbld/blob/develop/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://raw.githubusercontent.com/adriens/chocolatey-kbld/main/img/CarvelLogo.png</iconUrl>
+    <iconUrl>https://cdn.statically.io/gh/adriens/chocolatey-kbld/main/img/CarvelLogo.png</iconUrl>
     <packageSourceUrl>https://github.com/adriens/chocolatey-kbld</packageSourceUrl>
     <releaseNotes>https://github.com/vmware-tanzu/carvel-kbld/releases/tag/v0.29.0</releaseNotes>
     <docsUrl>https://carvel.dev/kbld/docs/latest/</docsUrl>
