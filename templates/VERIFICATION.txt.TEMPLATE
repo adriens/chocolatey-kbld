@@ -1,0 +1,12 @@
+﻿
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+Binary file <kbld.exe> comes from the official release page :
+
+<https://github.com/vmware-tanzu/carvel-kbld/releases/tag/v@KBLD_VERSION@>
+
+The only included binary is :
+
+@KBLD_SHA-256@    ./kbld-windows-amd64.exe

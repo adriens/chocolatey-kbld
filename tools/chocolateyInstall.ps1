@@ -1,7 +1,7 @@
 $toolsDir    = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 $ErrorActionPreference = 'Stop';
 
-
+Copy-Item "$toolsDir\kbld-windows-amd64.exe" -Destination "$toolsDir\kbld.exe"
 
 $packageArgs = @{
   packageName   = 'kbld'

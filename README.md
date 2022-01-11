@@ -26,20 +26,6 @@ To install `kbld` and get an optimal experience on windows, just:
 
 ```
 git clone https://github.com/adriens/chocolatey-kbld.git
-cd chocolatey-kbld
-choco uninstall kbld
-choco install -fdv kbld.nuspec
-```
-
-:ballot_box_with_check: TODO section
-
-[Not yet implemented CI](https://github.com/adriens/chocolatey-kbld/issues/2) so:
-
-## Release check list
-
-
-## Deploy to central
-
-```
-choco push kbld.0.29.0.nupkg --source https://push.chocolatey.org/ -apikey *******
+cd chocolatey-kapp
+ant make
 ```

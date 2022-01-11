@@ -1,0 +1,11 @@
+install:
+  - ps: choco install ant
+build_script:
+  - ant -version
+  - ant info load.properties
+  - ant make
+deploy_script:
+  - ps: if($env:APPVEYOR_REPO_TAG  -eq 'True') {. .\release.ps1 %CHOCO_APIKEY%}
+environment:
+  CHOCO_APIKEY:
+    secure: jRQ9WmVCdly4Z2gKEEq6ZIv+16er3lOM/JHejw+N4qzKkLZodGIXjchDfYLVQ1MK

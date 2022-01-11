@@ -1,0 +1,110 @@
+<?xml version = "1.0"?>
+<project name = "Carvel kbld chocolatey package build helper" 
+         default = "info">
+
+    <target name = "info" description="Show some infos abot this build file." depends="load.properties">
+        <echo>Ant build that helps preparing kbld chocolatey releases.</echo>
+    </target>
+   
+    <target name="load.properties" description = "Load external parametrized properties.">
+        <loadproperties>
+            <file file="kbld.properties"/>
+        </loadproperties>
+        <echo>kbld target version : &lt;${kbld.version}&gt;</echo>
+    </target>
+   
+    <target name = "clean" description="Clean all build result files.">
+        <echo>Cleaning generated NUGETS generated package (nupkg) and other dynamic build files like *.ps1.</echo>
+        <delete>
+            <fileset dir="." includes="*.nupkg"/>
+            <fileset dir="." includes="*.nuspec"/>
+            <fileset dir="." includes="*.ps1"/>
+            <fileset dir="tools" includes="VERIFICATION.txt"/>
+            <fileset dir="tools" includes="kbld-windows-amd64.exe"/>
+        </delete>
+    </target>
+
+    <target name="get.kbld-exe" depends="load.properties" description="Get the exe file from Github official release.">
+        <get src="https://github.com/vmware-tanzu/carvel-kbld/releases/download/v${kbld.version}/kbld-windows-amd64.exe"
+             dest="tools"/>
+    </target>
+
+    <target name="load.sha256.as.property" depends="get.kbld-exe" description="Get the SHA256 checksum from the kbld binary file.">
+        <checksum file="tools/kbld-windows-amd64.exe"
+            algorithm="SHA-256"
+            property="kbld.checksum"/>
+        <echo>kbld checksum : &lt;${kbld.checksum}&gt;</echo>
+    </target>
+   
+    <target name="prepare.build.files"
+            description="Inject dynamic variables in chocolatey build files."
+            depends="load.sha256.as.property">
+        <echo>Preparing &lt;kbld.nuspec&gt; file : injecting kbld version...</echo>
+        <copy file="templates/kbld.nuspec.TEMPLATE" tofile="kbld.nuspec"/>
+        <echo>Injecting target Kapp version in nuspec file...</echo>
+        <replace file="kbld.nuspec" token="@KBLD_VERSION@" value="${kbld.version}"/>
+        <echo>nuspec file prepared.</echo>
+        
+        <echo>Preparing &lt;release.ps1&gt; ...</echo>
+        <copy file="templates/release.ps1.TEMPLATE" tofile="release.ps1"/>
+        <replace file="release.ps1" token="@KBLD_VERSION@" value="${kbld.version}"/>
+        <echo>&lt;release.ps1&gt; file prepared.</echo>
+
+        <echo>Preparing &lt;VERIFICATION.txt&gt; ...</echo>
+        <copy file="templates/VERIFICATION.txt.TEMPLATE" tofile="tools/VERIFICATION.txt"/>
+        <replace file="tools/VERIFICATION.txt" token="@KBLD_VERSION@" value="${kbld.version}"/>
+        <replace file="tools/VERIFICATION.txt" token="@KBLD_SHA-256@" value="${kbld.checksum}"/>
+        <echo>&lt;tools/VERIFICATION.txt&gt; file prepared.</echo>
+    </target>
+    
+    <target name="prepare"
+            description="Prepare all the files required to run a &lt;choco install -fdv kbld.nuspec&gt;"
+            depends="clean,prepare.build.files">
+        <echo>Ready to run choco build :</echo>
+        <echo>choco install -fdv kbld.nuspec</echo>
+    </target>
+    
+    <target name="make" 
+            depends="prepare"
+            description="Build AND INSTALL kapp from the locally built chocolatey package.">
+            <exec executable="cmd">
+                <arg value="/c"/>
+                <arg value="choco install --yes -fdv kbld.nuspec"/>
+            </exec>
+            
+            <echo>Release command :</echo>
+            <echo>choco push kbld.${kbld.version}.nupkg -s https://chocolatey.org/ -apikey *******</echo>
+    </target>
+	
+	<target name="get-release-command" 
+            depends="load.properties"
+            description="Just get the release command.">
+            <echo>Release command :</echo>
+            <echo>choco push kbld.${kbld.version}.nupkg -s https://chocolatey.org/ -apikey %CHOCO_APIKEY%</echo>
+    </target>
+	
+	<target name="get-ps1-command" 
+            depends="load.properties"
+            description="Just get the release command.">
+            <echo>Release command :</echo>
+            <echo>choco push kbld.${kbld.version}.nupkg -s https://chocolatey.org/ -apikey %CHOCO_APIKEY%</echo>
+    </target>
+    
+    <target name="choco-uninstall" 
+            depends="clean"
+            description="Uninstall kbld.">
+            <exec executable="cmd">
+                <arg value="/c"/>
+                <arg value="choco uninstall --yes kbld"/>
+            </exec>
+    </target>
+    
+    <target name="choco-install" 
+            depends="clean"
+            description="Install kbld from central chocolatey repo.">
+            <exec executable="cmd">
+                <arg value="/c"/>
+                <arg value="choco install kbld"/>
+            </exec>
+    </target>
+</project>
