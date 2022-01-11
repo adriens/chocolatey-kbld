@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/icf5igm7iovxi2l3?svg=true)](https://ci.appveyor.com/project/adriens/chocolatey-kbld)
 [![Chocolatey](https://img.shields.io/chocolatey/v/kbld.svg)](https://chocolatey.org/packages/kbld)
 [![Chocolatey](https://img.shields.io/chocolatey/dt/kbld.svg)](https://chocolatey.org/packages/kbld)
 
